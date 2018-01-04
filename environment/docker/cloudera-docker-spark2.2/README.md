@@ -28,6 +28,8 @@ Others: [https://docs.docker.com/engine/installation/](https://docs.docker.com/e
 
 `docker-compose build`
 
-`docker-compose up`
+`docker-compose up -d`
+
+`docker-compose exec cdh-spark /bin/bash`
 
 

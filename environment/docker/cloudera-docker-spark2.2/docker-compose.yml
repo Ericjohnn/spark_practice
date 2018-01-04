@@ -1,6 +1,6 @@
 version: "3"
 services:
-  cloudera:
+  cdh-spark:
     build: .
     image: cdh-spark:2.2
     hostname: quickstart.cloudera
