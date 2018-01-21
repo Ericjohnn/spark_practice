@@ -4,9 +4,6 @@ import sys
 import logging
 
 LOG_PATH = os.environ['log']
-spark_home = os.environ['SPARK_HOME']
-sys.path.insert(0, os.path.join(spark_home, 'python'))
-sys.path.insert(0, os.path.join(spark_home, 'python/lib/py4j-0.10.4-src.zip'))
 
 from pyspark.sql import SparkSession
 
@@ -27,7 +24,7 @@ def main(*args):
                .orderBy(['avg_ratings'], ascending=[0])
 	       .limit(top))
     logger.info("result: {}".format(result.toPandas()))
-    #spark.stop()
+    spark.stop()
 
 if __name__ == '__main__':
     logging.basicConfig(format='[%(levelname)s] %(asctime)s %(message)s',
