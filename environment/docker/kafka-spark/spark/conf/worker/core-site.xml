@@ -1,0 +1,67 @@
+<configuration>
+   <property>
+      <name>fs.default.name</name>
+      <value>file:///</value> 
+   </property>
+
+<property>
+  <name>dfs.webhdfs.enabled</name>
+  <value>true</value>
+</property>
+
+<property>
+  <name>fs.s3.impl</name>
+  <value>org.apache.hadoop.fs.s3a.S3AFileSystem</value>
+</property>
+
+<property>
+  <name>fs.s3n.impl</name>
+  <value>org.apache.hadoop.fs.s3native.NativeS3FileSystem</value>
+</property>
+
+<property>
+  <name>fs.s3n.block.size</name>
+  <value>67108864</value>
+  <description>Block size to use when reading files using the native S3
+  filesystem (s3n: URIs).</description>
+</property>
+
+<property>
+  <name>fs.s3n.multipart.uploads.enabled</name>
+  <value>false</value>
+  <description>Setting this property to true enables multiple uploads to
+  native S3 filesystem. When uploading a file, it is split into blocks
+  if the size is larger than fs.s3n.multipart.uploads.block.size.
+  </description>
+</property>
+
+<property>
+  <name>fs.s3n.multipart.uploads.block.size</name>
+  <value>67108864</value>
+  <description>The block size for multipart uploads to native S3 filesystem.
+  Default size is 64MB.
+  </description>
+</property>
+
+<property>
+  <name>fs.s3n.multipart.copy.block.size</name>
+  <value>5368709120</value>
+  <description>The block size for multipart copy in native S3 filesystem.
+  Default size is 5GB.
+  </description>
+</property>
+
+<property>
+  <name>fs.s3n.server-side-encryption-algorithm</name>
+  <value></value>
+  <description>Specify a server-side encryption algorithm for S3.
+  The default is NULL, and the only other currently allowable value is AES256.
+  </description>
+</property>
+
+<property>
+  <name>fs.s3a.impl</name>
+  <value>org.apache.hadoop.fs.s3a.S3AFileSystem</value>
+</property>
+</configuration>
+
